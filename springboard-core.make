@@ -241,6 +241,9 @@ projects[honeypot][version] = 1.17
 projects[password_policy][subdir] = contrib
 projects[password_policy][version] = 1.11
 
+projects[migrate][subdir] = contrib
+projects[migrate][version] = 2.8
+
 ;
 ; Libraries
 ;

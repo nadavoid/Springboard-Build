@@ -25,8 +25,8 @@ projects[springboard_themes][download][branch] = 7.x-4.8.1
 ; Springboard Modules
 projects[springboard][type] = module
 projects[springboard][download][type] = git
-projects[springboard][download][url] = git://github.com/JacksonRiver/springboard_modules.git
-projects[springboard][download][branch] = 7.x-4.8.1
+projects[springboard][download][url] = git://github.com/nadavoid/springboard_modules.git
+projects[springboard][download][branch] = cs-288-7.x-4.8.1
 
 ; Springboard-sdk-php
 libraries[springboard_sdk_php][directory_name] = springboard_advocacy

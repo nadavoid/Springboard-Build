@@ -26,7 +26,7 @@ projects[springboard_themes][download][branch] = 7.x-4.8.2.1-a9793b0
 projects[springboard][type] = module
 projects[springboard][download][type] = git
 projects[springboard][download][url] = git://github.com/nadavoid/springboard_modules.git
-projects[springboard][download][branch] = cs-288-7.x-4.8.2.1
+projects[springboard][download][branch] = cs-288-7.x-4.8.2.1-sage_offline_email
 
 ; Springboard-sdk-php
 libraries[springboard_sdk_php][directory_name] = springboard_advocacy

@@ -1,7 +1,7 @@
 api = 2
 core = 7.x
 
-includes[springboard-core] = https://raw.githubusercontent.com/nadavoid/Springboard-Build/cs-288-7.x-4.8.2.1/springboard-core.make
+includes[springboard-core] = https://raw.githubusercontent.com/nadavoid/Springboard-Build/cs-288-7.x-4.8.2.1-sage_offline_email/springboard-core.make
 
 projects[cdn][subdir] = contrib
 projects[cdn][version] = 2.6

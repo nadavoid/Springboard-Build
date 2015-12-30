@@ -21,6 +21,7 @@ projects[springboard_themes][type] = theme
 projects[springboard_themes][download][type] = git
 projects[springboard_themes][download][url] = git://github.com/JacksonRiver/springboard-themes.git
 projects[springboard_themes][download][branch] = 7.x-4.9-beta1
+projects[springboard_themes][patch][npr-cobranding] = "patches/springboard_themes/re-198-re-274-adding-logos-and-styles-for-npr-co-branded-ba.patch"
 
 ; Springboard Modules
 projects[springboard][type] = module

@@ -4,7 +4,7 @@ core = 7.x
 
 ; Drupal
 projects[drupal][type] = core
-projects[drupal][version] = 7.39
+projects[drupal][version] = 7.41
 
 ;
 ; The Springboard repos.
@@ -98,10 +98,7 @@ projects[features][subdir] = contrib
 projects[features][version] = 2.0
 
 projects[formblock][subdir] = contrib
-projects[formblock][type] = module
-projects[formblock][download][type] = git
-projects[formblock][download][url] = http://git.drupal.org/project/formblock.git
-projects[formblock][download][branch] = 2d94c8323b2095e4c3e6470d31aa49063688dff6
+projects[formblock][version] =  1.0-alpha1
 
 projects[google_analytics][subdir] = contrib
 projects[google_analytics][version] = 1.3

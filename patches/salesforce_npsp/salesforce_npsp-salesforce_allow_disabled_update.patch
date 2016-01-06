@@ -1,0 +1,19 @@
+diff --git a/salesforce/salesforce_npsp/salesforce_npsp.install b/salesforce/salesforce_npsp/salesforce_npsp.install
+index 001355a..5b6575f 100644
+--- a/salesforce/salesforce_npsp/salesforce_npsp.install
++++ b/salesforce/salesforce_npsp/salesforce_npsp.install
+@@ -61,9 +61,11 @@ function salesforce_npsp_uninstall() {
+   }
+ 
+   // Remove NPSP Salesforce mapping for fundraiser sustainers series.
+-  $sustainers_series_mapping = salesforce_mapping_load('fundraiser_sustainers_series_npsp');
+-  if (!empty($sustainers_series_mapping)) {
+-    entity_delete('salesforce_mapping', $sustainers_series_mapping->salesforce_mapping_id);
++  if (module_exists('salesforce_mapping')) {
++    $sustainers_series_mapping = salesforce_mapping_load('fundraiser_sustainers_series_npsp');
++    if (!empty($sustainers_series_mapping)) {
++      entity_delete('salesforce_mapping', $sustainers_series_mapping->salesforce_mapping_id);
++    }
+   }
+ }
+ 

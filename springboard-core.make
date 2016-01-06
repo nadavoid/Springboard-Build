@@ -27,6 +27,8 @@ projects[springboard][type] = module
 projects[springboard][download][type] = git
 projects[springboard][download][url] = git://github.com/JacksonRiver/springboard_modules.git
 projects[springboard][download][branch] = 7.x-4.9-beta1
+projects[springboard][patch][sf_disabled_salesforce_npsp] = patches/salesforce_npsp/salesforce_npsp-salesforce_allow_disabled_update.patch
+projects[springboard][patch][sf_disabled_fundraiser_sustainers] = patches/fundraiser_sustainers/fundraiser_sustainers-salesforce_allow_disabled_update.patch
 
 ; Springboard-sdk-php
 libraries[springboard_sdk_php][directory_name] = springboard_advocacy

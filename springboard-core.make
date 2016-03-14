@@ -29,6 +29,7 @@ projects[springboard][download][url] = git://github.com/JacksonRiver/springboard
 projects[springboard][download][branch] = 7.x-4.9.1
 projects[springboard][patch][sf_disabled_salesforce_npsp] = patches/salesforce_npsp/salesforce_npsp-salesforce_allow_disabled_update.patch
 projects[springboard][patch][sf_disabled_fundraiser_sustainers] = patches/fundraiser_sustainers/fundraiser_sustainers-salesforce_allow_disabled_update.patch
+projects[springboard][patch][417_email_tokens] = patches/419-email-tokens/419-email-tokens.patch
 
 ; Springboard-sdk-php
 libraries[springboard_sdk_php][directory_name] = springboard_advocacy

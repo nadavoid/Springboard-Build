@@ -1,5 +1,3 @@
-@todo put this file in Springboard-Build.
-
 Adds https://github.com/JacksonRiver/springboard_modules/commit/57023f39273c27b329e7a915759b05b2f5952230
 
 See https://www.assembla.com/spaces/npr-digital-services-custom-sb-dev/tickets/505

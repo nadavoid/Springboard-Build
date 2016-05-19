@@ -4,7 +4,7 @@ core = 7.x
 
 ; Drupal
 projects[drupal][type] = core
-projects[drupal][version] = 7.41
+projects[drupal][version] = 7.43
 
 ;
 ; The Springboard repos.
@@ -14,20 +14,20 @@ projects[drupal][version] = 7.41
 projects[sbsetup][type] = profile
 projects[sbsetup][download][type] = git
 projects[sbsetup][download][url] = git://github.com/JacksonRiver/springboard.git
-projects[sbsetup][download][branch] = 7.x-4.9.1
+projects[sbsetup][download][branch] = 7.x-4.10-rc1
 
 ; Springboard themes
 projects[springboard_themes][type] = theme
 projects[springboard_themes][download][type] = git
 projects[springboard_themes][download][url] = git://github.com/JacksonRiver/springboard-themes.git
-projects[springboard_themes][download][branch] = 7.x-4.9.1
+projects[springboard_themes][download][branch] = 7.x-4.10-rc1
 projects[springboard_themes][patch][npr-cobranding] = "patches/springboard_themes/re-198-re-274-adding-logos-and-styles-for-npr-co-branded-ba.patch"
 
 ; Springboard Modules
 projects[springboard][type] = module
 projects[springboard][download][type] = git
 projects[springboard][download][url] = git://github.com/JacksonRiver/springboard_modules.git
-projects[springboard][download][branch] = 7.x-4.9.1
+projects[springboard][download][branch] = 7.x-4.10-rc2
 
 ; Springboard-sdk-php
 libraries[springboard_sdk_php][directory_name] = springboard_advocacy
@@ -182,6 +182,9 @@ projects[securepages][version] = 1.0-beta1
 projects[shorten][subdir] = contrib
 projects[shorten][version] = 1.2
 
+projects[smtp][subdir] = contrib
+projects[smtp][version] = 1.3
+
 projects[strongarm][subdir] = contrib
 projects[strongarm][version] = 2.0
 
@@ -319,14 +322,20 @@ projects[salesforce][patch][1934790] = http://drupal.org/files/salesforce-sandox
 ; Additional caching login in describObject method
 projects[salesforce][patch][2037609] = http://drupal.org/files/salesforce-object-additional-caching.patch
 
+; Increase the sobject cache from 5 minutes to 1 hour
+projects[salesforce][patch][] = https://raw.github.com/JacksonRiver/Springboard-Build/7.x-4.x-sobject_cache/patches/salesforce_increase_sobject_cache_timeout.patch
+
 ; Make encrypt module use the encrypt key
 projects[encrypt][patch][1927572] = http://drupal.org/files/encrypt_key_is_never_used.patch
 
 ; Trim only the decrypted output from encrypt
-projects[encrypt][patch][] = https://raw.github.com/JacksonRiver/Springboard-Build/7.x-4.9.1/patches/encrypt-trim-only-decrypted-output.patch
+projects[encrypt][patch][] = https://raw.github.com/JacksonRiver/Springboard-Build/7.x-4.9.2/patches/encrypt-trim-only-decrypted-output.patch
 
 ; Fix to authnet requirements
 projects[commerce_authnet][patch][2063787] = http://drupal.org/files/incorrect_requirements-2063787-1.patch
 
 ; Add a [current-page:object:?] dynamic token (see: https://www.drupal.org/node/919760)
 projects[token][patch][919760] = https://drupal.org/files/token-current_page_object_token-919760-9.patch
+
+; Commerce paypal SSL fix
+projects[commerce_paypal][patch][2616730] = https://www.drupal.org/files/issues/use-tls.patch

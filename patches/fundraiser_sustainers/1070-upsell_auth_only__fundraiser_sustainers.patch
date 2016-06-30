@@ -1,8 +1,8 @@
 diff --git a/fundraiser/modules/fundraiser_sustainers/fundraiser_sustainers.module b/fundraiser/modules/fundraiser_sustainers/fundraiser_sustainers.module
-index 9432ebc..afa30e8 100644
+index fb8c47b..f8b7579 100644
 --- a/fundraiser/modules/fundraiser_sustainers/fundraiser_sustainers.module
 +++ b/fundraiser/modules/fundraiser_sustainers/fundraiser_sustainers.module
-@@ -3256,8 +3256,10 @@ function fundraiser_sustainers_fundraiser_donation_success($donation) {
+@@ -3262,8 +3262,10 @@ function fundraiser_sustainers_fundraiser_donation_success($donation) {
          $fundraiser_sustainers_series = entity_create('fundraiser_sustainers_series', $fundraiser_sustainers_series_data);
          $fundraiser_sustainers_series->save();
  

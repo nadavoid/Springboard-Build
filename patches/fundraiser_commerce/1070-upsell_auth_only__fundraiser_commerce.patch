@@ -1,5 +1,5 @@
 diff --git a/fundraiser/modules/fundraiser_commerce/gateways/commerce_sage_payments/commerce_sage_payments.module b/fundraiser/modules/fundraiser_commerce/gateways/commerce_sage_payments/commerce_sage_payments.module
-index 4ea9648..ce02fb0 100644
+index 4ea9648..39dc12e 100644
 --- a/fundraiser/modules/fundraiser_commerce/gateways/commerce_sage_payments/commerce_sage_payments.module
 +++ b/fundraiser/modules/fundraiser_commerce/gateways/commerce_sage_payments/commerce_sage_payments.module
 @@ -367,7 +367,7 @@ function commerce_sage_payments_cc_vault_submit_form_submit($payment_method, $pa
@@ -20,9 +20,12 @@ index 4ea9648..ce02fb0 100644
  
    // Store the remote id.
    $transaction->remote_id = !empty($transaction_response['REFERENCE']) ? $transaction_response['REFERENCE'] : '';
-@@ -1131,7 +1131,12 @@ function _commerce_sage_payments_vault_request_sale($gateway, $request_parameter
+@@ -1129,11 +1129,17 @@ function _commerce_sage_payments_vault_request_sale($gateway, $request_parameter
+ 
+   // Determine the correct client and request type to use
    switch($gateway['method_id']) {
-     case 'commerce_sage_payments_cc' :
+-    case 'commerce_sage_payments_cc' :
++    case 'commerce_sage_payments_cc':
        $sage_client = _commerce_sage_payments_get_sage_payments_vault_bankcard_client();
 -      $type = 'VAULT_BANKCARD_SALE';
 +      if ($gateway['settings']['transaction_type'] == COMMERCE_CREDIT_AUTH_ONLY) {
@@ -32,5 +35,36 @@ index 4ea9648..ce02fb0 100644
 +        $type = 'VAULT_BANKCARD_SALE';
 +      }
        break;
-     case 'commerce_sage_payments_eft' :
+-    case 'commerce_sage_payments_eft' :
++
++    case 'commerce_sage_payments_eft':
        $sage_client = _commerce_sage_payments_get_sage_payments_vault_virtual_check_client();
+       $type = 'VIRTUAL_CHECK_WEB_SALE';
+       break;
+@@ -1201,7 +1207,7 @@ function _commerce_sage_payments_get_sage_payments_vault_management_client() {
+   $client = new SoapClient(drupal_get_path('module', 'commerce_sage_payments') . '/libraries/wsVault.wsdl.xml',
+                            array('location' => 'https://gateway.sagepayments.net/web_services/wsVault/wsVault.asmx',
+                                  'uri'      => 'https://gateway.sagepayments.net/web_services/wsVault/'
+-                                )
++                           )
+                           );
+   return $client;
+ }
+@@ -1215,7 +1221,7 @@ function _commerce_sage_payments_get_sage_payments_vault_bankcard_client() {
+                            array('location' => 'https://gateway.sagepayments.net/web_services/wsVault/wsVaultBankcard.asmx',
+                                  'uri'      => 'https://gateway.sagepayments.net/web_services/wsVault/',
+                                  // 'trace' => 1
+-                                )
++                           )
+                           );
+   return $client;
+ }
+@@ -1229,7 +1235,7 @@ function _commerce_sage_payments_get_sage_payments_vault_virtual_check_client()
+                            array('location' => 'https://gateway.sagepayments.net/web_services/wsVault/wsVaultVirtualCheck.asmx',
+                                  'uri'      => 'https://gateway.sagepayments.net/web_services/wsVault/',
+                                  // 'trace' => 1,
+-                                )
++                           )
+                           );
+   return $client;
+ }

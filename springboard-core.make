@@ -28,6 +28,12 @@ projects[springboard][type] = module
 projects[springboard][download][type] = git
 projects[springboard][download][url] = git://github.com/JacksonRiver/springboard_modules.git
 projects[springboard][download][branch] = 7.x-4.12
+projects[springboard][patch][sf_disabled_salesforce_npsp] = patches/salesforce_npsp/salesforce_npsp-salesforce_allow_disabled_update.patch
+projects[springboard][patch][sf_disabled_fundraiser_sustainers] = patches/fundraiser_sustainers/fundraiser_sustainers-salesforce_allow_disabled_update.patch
+projects[springboard][patch][419_email_tokens] = patches/419-email-tokens/419-email-tokens.patch
+projects[springboard][patch][1070_upsell_auth_only_fundraiser_upsell] = patches/fundraiser_upsell/1070-upsell_auth_only__fundraiser_upsell.patch
+projects[springboard][patch][1070_upsell_auth_only_fundraiser_commerce] = patches/fundraiser_commerce/1070-upsell_auth_only__fundraiser_commerce.patch
+projects[springboard][patch][1070_upsell_auth_only_fundraiser_sustainers] = patches/fundraiser_sustainers/1070-upsell_auth_only__fundraiser_sustainers.patch
 
 ; Springboard-sdk-php
 libraries[springboard_sdk_php][directory_name] = springboard_advocacy

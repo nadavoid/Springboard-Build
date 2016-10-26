@@ -1,0 +1,45 @@
+diff --git a/email_wrappers/email_wrappers.module b/email_wrappers/email_wrappers.module
+index b7e7754..a313e23 100644
+--- a/email_wrappers/email_wrappers.module
++++ b/email_wrappers/email_wrappers.module
+@@ -527,7 +527,8 @@ function email_wrappers_mail_alter(&$message) {
+       $sid = $params['submission']->sid;
+       if ($resend) {
+         if (module_exists('fundraiser_webform')) {
+-          $donation = _fundraiser_webform_get_donation_by_sid($sid);
++          // Reload donation to make sure we have the latest information for tokens, etc
++          $donation = _fundraiser_webform_get_donation_by_sid($sid, TRUE);
+           $params['donation'] = $donation;  //needed for subject line in email_wrappers_mail
+           $params['message']['params']['donation'] = $donation;  //needed for body in email_wrappers_render_email_body
+         }
+diff --git a/fundraiser/modules/fundraiser_webform/fundraiser_webform.module b/fundraiser/modules/fundraiser_webform/fundraiser_webform.module
+index 42aa983..1b5ec22 100644
+--- a/fundraiser/modules/fundraiser_webform/fundraiser_webform.module
++++ b/fundraiser/modules/fundraiser_webform/fundraiser_webform.module
+@@ -1216,11 +1216,11 @@ function _fundraiser_webform_get_nonfieldset_keys($field_info = NULL, $fields =
+ /**
+  * Helper function, get a donation object given a sid.
+  */
+-function _fundraiser_webform_get_donation_by_sid($sid) {
++function _fundraiser_webform_get_donation_by_sid($sid, $refresh = FALSE) {
+   $did = db_query('SELECT did FROM {fundraiser_donation} WHERE sid = :sid',
+     array(':sid' => $sid))->fetchCol();
+   if (isset($did[0])) {
+-    $donation = fundraiser_donation_get_donation($did[0]);
++    $donation = fundraiser_donation_get_donation($did[0], $refresh);
+     if ($donation) {
+       return $donation;
+     }
+diff --git a/webform_confirmations/webform_confirmations.module b/webform_confirmations/webform_confirmations.module
+index 1ac6f87..b9e4323 100644
+--- a/webform_confirmations/webform_confirmations.module
++++ b/webform_confirmations/webform_confirmations.module
+@@ -299,7 +299,7 @@ function webform_confirmations_fundraiser_donation_success($donation) {
+       foreach ($settings as $mail_config) {
+         if (isset($mail_config['extra']['send_on_donation_success']) && $mail_config['extra']['send_on_donation_success'] === TRUE) {
+           // Reload the donation to be sure it has the latest information.
+-          $donation = fundraiser_donation_get_donation($donation->did);
++          $donation = fundraiser_donation_get_donation($donation->did, TRUE);
+           _webform_confirmation_send_confirmation_mail($mail_config, $donation);
+         }
+       }

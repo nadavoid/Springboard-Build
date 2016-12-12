@@ -32,6 +32,7 @@ projects[springboard][patch][419_email_tokens] = patches/419-email-tokens/419-em
 projects[springboard][patch][1070_upsell_auth_only_fundraiser_upsell] = patches/fundraiser_upsell/1070-upsell_auth_only__fundraiser_upsell.patch
 projects[springboard][patch][1070_upsell_auth_only_fundraiser_commerce] = patches/fundraiser_commerce/1070-upsell_auth_only__fundraiser_commerce.patch
 projects[springboard][patch][1070_upsell_auth_only_fundraiser_sustainers] = patches/fundraiser_sustainers/1070-upsell_auth_only__fundraiser_sustainers.patch
+projects[springboard][patch][1507_offline_email_authnet] = patches/fundraiser_offline/1507-offline_email_authnet.patch
 
 ; Springboard-sdk-php
 libraries[springboard_sdk_php][directory_name] = springboard_advocacy

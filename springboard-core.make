@@ -4,7 +4,7 @@ core = 7.x
 
 ; Drupal
 projects[drupal][type] = core
-projects[drupal][version] = 7.52
+projects[drupal][version] = 7.53
 
 ;
 ; The Springboard repos.
@@ -14,19 +14,19 @@ projects[drupal][version] = 7.52
 projects[sbsetup][type] = profile
 projects[sbsetup][download][type] = git
 projects[sbsetup][download][url] = git://github.com/JacksonRiver/springboard.git
-projects[sbsetup][download][branch] = 7.x-4.13-beta
+projects[sbsetup][download][branch] = 7.x-4.13
 
 ; Springboard themes
 projects[springboard_themes][type] = theme
 projects[springboard_themes][download][type] = git
 projects[springboard_themes][download][url] = git://github.com/JacksonRiver/springboard-themes.git
-projects[springboard_themes][download][branch] = 7.x-4.13-beta
+projects[springboard_themes][download][branch] = 7.x-4.13
 
 ; Springboard Modules
 projects[springboard][type] = module
 projects[springboard][download][type] = git
 projects[springboard][download][url] = git://github.com/JacksonRiver/springboard_modules.git
-projects[springboard][download][branch] = 7.x-4.13-beta
+projects[springboard][download][branch] = 7.x-4.13
 projects[springboard][patch][419_email_tokens] = patches/419-email-tokens/419-email-tokens.patch
 projects[springboard][patch][1070_upsell_auth_only_fundraiser_upsell] = patches/fundraiser_upsell/1070-upsell_auth_only__fundraiser_upsell.patch
 projects[springboard][patch][1070_upsell_auth_only_fundraiser_commerce] = patches/fundraiser_commerce/1070-upsell_auth_only__fundraiser_commerce.patch
@@ -358,7 +358,7 @@ projects[salesforce][patch][] = https://raw.github.com/JacksonRiver/Springboard-
 projects[encrypt][patch][1927572] = http://drupal.org/files/encrypt_key_is_never_used.patch
 
 ; Trim only the decrypted output from encrypt
-projects[encrypt][patch][] = https://raw.github.com/JacksonRiver/Springboard-Build/7.x-4.12.4/patches/encrypt-trim-only-decrypted-output.patch
+projects[encrypt][patch][] = https://raw.github.com/JacksonRiver/Springboard-Build/7.x-4.13/patches/encrypt-trim-only-decrypted-output.patch
 
 ; Fix to authnet requirements
 projects[commerce_authnet][patch][2063787] = http://drupal.org/files/incorrect_requirements-2063787-1.patch

@@ -1,5 +1,5 @@
 ---
- springboard_backend/css/styles.css                 |  24 +++++++++++++++++----
+ springboard_backend/css/styles.css                 |  36 ++++++++++++++++++++++++++----------
  springboard_backend/images/marketingforms-logo.png | Bin 0 -> 6036 bytes
  springboard_backend/images/npr-down-arrow.png      | Bin 0 -> 1046 bytes
  springboard_backend/images/powered-by-logo.png     | Bin 0 -> 3772 bytes
@@ -9,7 +9,7 @@
  create mode 100644 springboard_backend/images/powered-by-logo.png
 
 diff --git a/springboard_backend/css/styles.css b/springboard_backend/css/styles.css
-index 136237ae99208e5507b3702236985c4c2cc47f36..aeb613758f2c8987e19d12924a811225d98d15be 100644
+index 859c71b..f003518 100644
 --- a/springboard_backend/css/styles.css
 +++ b/springboard_backend/css/styles.css
 @@ -114,6 +114,10 @@ h4.panel-title {
@@ -23,20 +23,32 @@ index 136237ae99208e5507b3702236985c4c2cc47f36..aeb613758f2c8987e19d12924a811225
  #footer-wrapper {
    min-height: 475px;
    background: #085685 url("../images/bg-footer.png") no-repeat top center;
-@@ -345,24 +349,27 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
+@@ -349,32 +353,36 @@ ul.nav li.dropdown:hover > ul.dropdown-menu {
    display: inline-block;
    width: 160px;
    height: 19px;
--  background: url("../logo.png") no-repeat !important;
+-  background-image: url("../images/sb-white.svg");
 +  background: url("../images/marketingforms-logo.png") no-repeat !important;
+   background-size: contain;
+   background-repeat: no-repeat;
+-  margin: -5px 18px 0 0;
++  margin: 0;
    text-align: left;
    text-indent: -9999px;
  }
+
+ .ie8 #menu-wrapper .nav-tabs li.springboard > a,
+ .ie8 #menu-wrapper .nav-tabs li.springboard > a.active {
+-  background-image: url("../logo.png");
+-  }
++  background-image: url("../images/marketingforms-logo.png");
++}
  
  #menu-wrapper .nav-tabs li.springboard > a:after {
 +  background: transparent url("../images/npr-down-arrow.png") no-repeat 0 0;
    position: absolute;
-   left: 146px;
++  left: 146px;
+   right: 0px;
 -  margin: 0 0 0 0;
 +  margin: 10px 0 0 10px;
    color: #fff;
@@ -53,21 +65,25 @@ index 136237ae99208e5507b3702236985c4c2cc47f36..aeb613758f2c8987e19d12924a811225
 +  width: 10px;
 +  height: 6px;
  }
- 
- #menu-wrapper .nav-tabs li.options {
-@@ -2847,6 +2854,11 @@ fieldset#edit-refund-options {
+
+ #menu-wrapper .nav-tabs li.springboard > ul.dropdown-menu {
+@@ -3020,9 +3028,13 @@ fieldset#edit-refund-options {
      border-radius: 0;
    }
- 
+
+-  #menu-wrapper .nav-tabs  li.springboard {
+-    margin-right: 20px;
 +  #menu-wrapper .nav-tabs li.springboard a.lia-depth-1,
 +  #menu-wrapper .nav-tabs li.springboard a.lia-depth-1.active {
 +    margin: 10px 0 0 10px;
-+  }
-+
+   }
++  /*#menu-wrapper .nav-tabs  li.springboard {*/
++    /*margin-right: 20px;*/
++  /*}*/
+
    body #block-system-main {
      margin: 10px;
-   }
-@@ -2866,6 +2878,10 @@ fieldset#edit-refund-options {
+@@ -3043,6 +3055,10 @@ fieldset#edit-refund-options {
      height: auto;
    }
  
